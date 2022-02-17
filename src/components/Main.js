@@ -31,6 +31,7 @@ export const Main = () => {
             author = {article.author}
             img = {article.urlToImage}
             date = {article.publishedAt}
+            articleUrl = {article.url}
           />
         )
         
