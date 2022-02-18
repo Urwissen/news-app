@@ -23,6 +23,7 @@ header {
 .navbar--title {
   margin: 0;
   font-size: 2rem;
+  padding: 1em;
 }
 
 .navbar--list {
@@ -56,6 +57,8 @@ main {
 }
 
 article {
+  display: flex;
+  flex-direction: column;
   margin: 0 1em 1em 1em;
 }
 
@@ -65,10 +68,28 @@ article img {
   margin-top: 1em;
 }
 
-article date {
+article time {
   color: gray;
   font-size: .8rem;
   font-weight: bold;
+}
+
+article button {
+  align-self: center;
+  margin: 1em 0 0.5em 0;
+  border: none;
+  cursor: pointer;
+  padding: 0.5em 1em;
+  border-radius: 0.25em;
+}
+
+article button:hover,
+article button:focus {
+  background-color: aquamarine;
+}
+
+article hr {
+  width: 100%;
 }
 
 /* FOOTER */

@@ -1,13 +1,16 @@
 import React from 'react'
 
 const Article = (props) => {
-  console.log(props.date.split("T"))
+  const [showArticle, setShowArticle] = React.useState(false)
+  
   return (
-        <article className='article' onClick={() => window.open(props.articleUrl, "_blank")}>
+        <article className='article' /* onClick={() => window.open(props.articleUrl, "_blank")}*/>
             <img src={props.img} alt="title"/>
             <h2>{props.title}</h2>
-            <p>By: {props.author}</p>
-            <date>{props.date.split("T")[0].split("-").reverse().join(".")}</date>
+            {props.author ? <p>By: {props.author}</p> : null}
+            <time>{props.date.split("T")[0].split("-").reverse().join(".")}</time>
+            <button onClick={() => setShowArticle((prev) => !prev)}>Get Full Article</button>
+            {showArticle ? <p>lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem</p> : null}
             <hr />
         </article>
   )
