@@ -6,13 +6,12 @@ export const Main = () => {
   const [articles, setArticles] = React.useState([])
 
   React.useEffect(() => {
-    var url = 'https://newsapi.org/v2/everything?' +
-    'q=Apple&' +
-    'from=2022-02-17&' +
+    const url = 'https://newsapi.org/v2/top-headlines?' +
+    'country=de&' +
     'sortBy=popularity&' +
     'apiKey=' + key;
 
-    var req = new Request(url);
+    const req = new Request(url);
 
     fetch(req)
     .then(response => response.json())
@@ -23,7 +22,7 @@ export const Main = () => {
 
   return (
     <main>
-      {articles.map((article, index) => {
+      {articles? articles.map((article, index) => {
         return (
           <Article
             key={index}
@@ -35,7 +34,7 @@ export const Main = () => {
           />
         )
         
-      })}
+      }) : "loading..."}
     </main>
   )
 }
